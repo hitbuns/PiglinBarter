@@ -1,7 +1,5 @@
 package com.ConquestTech.Utilities;
 
-import com.MenuAPI.GlowEnchantment;
-import com.MenuAPI.Utils;
 import de.tr7zw.nbtapi.NBTCompound;
 import de.tr7zw.nbtapi.NBTItem;
 import org.bukkit.Color;
@@ -61,7 +59,7 @@ public class ItemBuilder {
         for (AttributeTypedModifier attributeTypedModifier : attributeTypedModifiers) {
             meta.addAttributeModifier(attributeTypedModifier
                     .attribute,new AttributeModifier(UUID.randomUUID(),
-                    "modifier_"+UUID.randomUUID()+"_"+Utils.RNG_INT(0,10000),
+                    "modifier_"+UUID.randomUUID()+"_"+Utils.RNGInt(0,10000),
                     attributeTypedModifier.value,attributeTypedModifier.operation,attributeTypedModifier
                     .equipmentSlot));
         }
@@ -186,11 +184,11 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder setGlowing(boolean b) {
-        if (!b) meta.removeEnchant(GlowEnchantment.getInstance());
-        else meta.addEnchant(GlowEnchantment.getInstance(),1,true);
-        return this;
-    }
+//    public ItemBuilder setGlowing(boolean b) {
+//        if (!b) meta.removeEnchant(GlowEnchantment.getInstance());
+//        else meta.addEnchant(GlowEnchantment.getInstance(),1,true);
+//        return this;
+//    }
 
     public record AttributeTypedModifier(Attribute attribute, AttributeModifier.Operation operation, double value,
                                          EquipmentSlot equipmentSlot) {

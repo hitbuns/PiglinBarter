@@ -55,7 +55,7 @@ public class Utils {
 
 
     public static List<String> color(List<String> strings) {
-        return strings != null ? strings.stream().map(com.MenuAPI.Utils::color)
+        return strings != null ? strings.stream().map(Utils::color)
                 .collect(Collectors.toList()) : new ArrayList<>();
     }
 
